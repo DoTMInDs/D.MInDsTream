@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myflixer Clone Website-D.MInDsTream</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />   
+    <script src="https://kit.fontawesome.com/1566b08547.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="header-container">
+        <div class="container">
+            <div class="navbar">
+                <div class="menu">
+                    <span class="material-symbols-outlined" onclick="openmenu()">menu</span>
+                </div>
+                <div class="logo">
+                    <span class="material-symbols-outlined">movie_filter</span>
+                    <div class="icon">
+                        <h2>D.MInDsTreaM</h2>
+                    </div>
+                </div>
+                <div class="list">
+                    <ul id="menulist">
+                        <li><a href="#">HOME</a></li>
+                        <li class="drop-genre">
+                            <a href="#">GENRE</i></a>
+                            <i id="plus" class="fa-solid fa-chevron-down" onclick="openGenre()"></i>
+                            
+                            <div id="genre" class="genre-drop-down">
+                                <i class="fa-regular fa-circle-xmark xmark" onclick="closeGenre()"></i>
+                                <i class="fa-solid fa-xmark" onclick="closeGenre()"></i>
+                                <div class="dropdown"><a href="#">Action</a></div>
+                                <div class="dropdown"><a href="#">Sci-Fic</a></div>
+                                <div class="dropdown"><a href="#">Drama</a></div>
+                                <div class="dropdown"><a href="#">Comedy</a></div>
+                                <div class="dropdown"><a href="#">Documentry</a></div>
+                                <div class="dropdown"><a href="#">Romans</a></div>
+                                <div class="dropdown"><a href="#">Animation</a></div>
+                                <div class="dropdown"><a href="#">Mystery</a></div>
+                                <div class="dropdown"><a href="#">Fantacy</a></div>
+                                <div class="dropdown"><a href="#">Crime</a></div>
+                                <div class="dropdown"><a href="#">Horror</a></div>
+                                <div class="dropdown"><a href="#">Thriller</a></div>
+                                <div class="dropdown"><a href="#">Adventure</a></div> 
+                               
+                            </div>
+                        </li>
+                        <li class="drop-genre drop-country">
+                            <a href="#">COUNTRY</a>
+                            <i id="add" class="fa-solid fa-chevron-down" onclick="openCountry()"></i>
+                            
+                            <div id="country" class="genre-drop-down country-drop-down">
+                                <i class="fa-regular fa-circle-xmark xmark" onclick="closeCountry()"></i>
+                                <i id="xmark" class="fa-solid fa-xmark" onclick="closeCountry()"></i>
+                                <div class="dropdown"><a href="#">United State of America</a></div>
+                                <div class="dropdown"><a href="#">United Arab Emirates</a></div>
+                                <div class="dropdown"><a href="#">Australia</a></div>
+                                <div class="dropdown"><a href="#">Belgium</a></div>
+                                <div class="dropdown"><a href="#">Bolgaria</a></div>
+                                <div class="dropdown"><a href="#">Colombia</a></div>
+                                <div class="dropdown"><a href="#">Canada</a></div>
+                                <div class="dropdown"><a href="#">Ghana</a></div>
+                                <div class="dropdown"><a href="#">Nigeria</a></div>
+                                <div class="dropdown"><a href="#">Ukraine</a></div>
+                                <div class="dropdown"><a href="#">Russia</a></div>
+                                <div class="dropdown"><a href="#">India</a></div>
+                                <div class="dropdown"><a href="#">Germany</a></div>           
+                                          
+                            </div>
+                        </li>
+                        <li><a href="#movies">MOVIES</a></li>
+                        <li><a href="#">TV SERIES</a></li>
+                        <li><a href="#">TOP IMDB</a></li>
+                        <i id="times" class="fa-regular fa-circle-xmark" onclick="closemenu()"></i>
+                    </ul>
+                    <!-- <div class="menu">
+                        <span class="material-symbols-outlined" onclick="openmenu()">menu</span>
+                    </div> -->
+                </div>
+                <div class="search">
+                    <span class="material-symbols-outlined">search</span>
+                    <input type="text" placeholder="Enter your keywords...">    
+                </div>
+                <div class="flow">
+                        <span class="material-icons">account_circle</span>
+                        <p><a href="#" onclick="goToLogin()">Login</a>
+                            <a href="#" onclick="goToSignIn()">Register</a>
+                        </p>
+                </div>                                                
+            </div>
+            <div id="form-container" class="form-container">
+                <div id="form" class="form">
+                    <i id="xmark" class="fa-regular fa-circle-xmark" onclick="closeForm()"></i>
+                    <h1>Sign In</h1>
+                    <p>Your account</p>
+                    <input type="text" name="email" id="email" placeholder="Your username or email" required> 
+                    <p>Password</p>
+                    <input type="text" name="email" id="password" placeholder="Password" required> 
+                    <p class="right">Forgot your password?</p>
+                        <input class="check" type="checkbox">
+                        <p class="tik">Remember me</p>  <br>
+                    <button onclick="return SubmitEvent()"><a href="#" >Login</a></button><br>
+                    <p class="acct">Don't have an account?<a href="#">Register</a></p>
+                </div>
+            </div>
+            
+            <div id="register-container" class="register-container">
+                    <div id="account" class="account">
+                        <i id="xmark" class="fa-regular fa-circle-xmark" onclick="closeAccount()"></i>
+                        <h1>Create Account</h1>
+                        <p>Username</p>
+                        <span id="error" class="material-symbols-outlined">error</span>
+                        <input type="text" name="email" id="name" placeholder="Your username">
+                        <p>Email address</p>
+                        <span id="error" class="material-symbols-outlined">error</span>
+                        <input type="text" name="email" id="email" placeholder="Your email"> 
+                        <p>Password</p>
+                        <span id="error" class="material-symbols-outlined">error</span>
+                        <input type="text" name="email" id="password" placeholder="Password"> 
+                        <p>Password confirmation</p>
+                        <span id="error" class="material-symbols-outlined">error</span>
+                        <input type="text" name="email" id="conf-password" placeholder="Repeat your password">
+                        <button onclick="sendEvent()"><a href="#">Register</a></button><br>
+                        <p class="acct">Don't have an account?<a href="#">Sign in</a></p>
+                    </div>
+            </div>
+            
+            <!-- --------------------------main-container-section------------ -->
+            <div class="main-content">
+                <div class="watch">
+                    <h1>Recommended</h1>
+                    <div class="unit"> 
+                        <div class="also active">
+                            <span class="material-symbols-outlined ">slideshow</span>
+                            <h2><a href="#">Movies</a></h2>
+                        </div>
+
+                        <div class="also">
+                            <span class="material-symbols-outlined">live_tv</span>
+                            <h2><a href="#">TV Shows</a></h2>
+                        </div>
+                        
+                        <div class="also">
+                            <span class="material-symbols-outlined">theaters</span>
+                            <h2><a href="#">Trending</a></h2>
+                        </div>
+                    </div> 
+                </div>
+                
+                <div class="main-clip">
+                    <div class="clip"><span class="material-symbols-outlined">hd</span></div>
+                    <div class="clip"><span class="material-symbols-outlined">hd</span></div>
+                    <div class="clip"><span class="material-symbols-outlined">hd</span></div>
+                    <div class="clip"><span class="material-symbols-outlined">hd</span></div>
+                    <div class="clip"><span class="material-symbols-outlined">hd</span></div>
+                    <div class="clip"><span class="material-symbols-outlined">hd</span></div>
+                    <div class="clip"><span class="material-symbols-outlined">hd</span></div>
+                    <div class="clip"><span class="material-symbols-outlined">hd</span></div>
+                    <div class="clip"><span class="material-symbols-outlined">hd</span></div>
+                    <div class="clip"><span class="material-symbols-outlined">hd</span></div>
+                    <div class="clip"><span class="material-symbols-outlined">hd</span></div>
+                    <div class="clip"><span class="material-symbols-outlined">hd</span></div>
+                    <div class="clip"><span class="material-symbols-outlined">hd</span></div>
+                    <div class="clip"><span class="material-symbols-outlined">hd</span></div>
+                    <div class="clip"><span class="material-symbols-outlined">hd</span></div>
+                    <div class="clip"><span class="material-symbols-outlined">hd</span></div>
+                    <div class="clip"><span class="material-symbols-outlined">hd</span></div>
+                    <div class="clip"><span class="material-symbols-outlined">hd</span></div>
+                </div>
+
+                <div id="movies" class="watch">
+                    <h1>Latest Movies</h1>
+                    <div class="unit">    
+                        <div class="non-active">
+                            <h2 class="spec"><a href="#">View all</a></h2>
+                            <span class="material-symbols-outlined ">chevron_right </span>
+                        </div>
+                    </div> 
+                </div>
+                
+                <div class="main-clip movies">
+                    <div class="clip"><span class="material-symbols-outlined">hd</span></div> 
+                    <div class="clip"><span class="material-symbols-outlined">hd</span></div>
+                    <div class="clip"><span class="material-symbols-outlined">hd</span></div>
+                    <div class="clip"><span class="material-symbols-outlined">hd</span></div>
+                    <div class="clip"><span class="material-symbols-outlined">hd</span></div>
+                    <div class="clip"><span class="material-symbols-outlined">hd</span></div>
+                    <div class="clip"><span class="material-symbols-outlined">hd</span></div>
+                    <div class="clip"><span class="material-symbols-outlined">hd</span></div>
+                    <div class="clip"><span class="material-symbols-outlined">hd</span></div>
+                    <div class="clip"><span class="material-symbols-outlined">hd</span></div>
+                    <div class="clip"><span class="material-symbols-outlined">hd</span></div>
+                    <div class="clip"><span class="material-symbols-outlined">hd</span></div>
+                    <div class="clip"><span class="material-symbols-outlined">hd</span></div>
+                    <div class="clip"><span class="material-symbols-outlined">hd</span></div>
+                    <div class="clip"><span class="material-symbols-outlined">hd</span></div>
+                    <div class="clip"><span class="material-symbols-outlined">hd</span></div>
+                    <div class="clip"><span class="material-symbols-outlined">hd</span></div>
+                    <div class="clip"><span class="material-symbols-outlined">hd</span></div>
+                </div>
+
+                <div id="tv-series" class="watch">
+                    <h1>Latest Tv series</h1>
+                    <div class="unit"> 
+                        <div class="non-active">
+                            <h2 class="spec"><a href="#">View all</a></h2>
+                            <span class="material-symbols-outlined ">chevron_right </span>
+                        </div>
+                    </div> 
+                </div>
+                
+                <div class="main-clip tv">
+                    <div class="clip"><span class="material-symbols-outlined">hd</span></div>
+                    <div class="clip"><span class="material-symbols-outlined">hd</span></div>
+                    <div class="clip"><span class="material-symbols-outlined">hd</span></div>
+                    <div class="clip"><span class="material-symbols-outlined">hd</span></div>
+                    <div class="clip"><span class="material-symbols-outlined">hd</span></div>
+                    <div class="clip"><span class="material-symbols-outlined">hd</span></div>
+                    <div class="clip"><span class="material-symbols-outlined">hd</span></div>
+                    <div class="clip"><span class="material-symbols-outlined">hd</span></div>
+                    <div class="clip"><span class="material-symbols-outlined">hd</span></div>
+                    <div class="clip"><span class="material-symbols-outlined">hd</span></div>
+                    <div class="clip"><span class="material-symbols-outlined">hd</span></div>
+                    <div class="clip"><span class="material-symbols-outlined">hd</span></div>
+                    <div class="clip"><span class="material-symbols-outlined">hd</span></div>
+                    <div class="clip"><span class="material-symbols-outlined">hd</span></div>
+                    <div class="clip"><span class="material-symbols-outlined">hd</span></div>
+                    <div class="clip"><span class="material-symbols-outlined">hd</span></div>
+                    <div class="clip"><span class="material-symbols-outlined">hd</span></div>
+                    <div class="clip"><span class="material-symbols-outlined">hd</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- --------------------------------footer-section------------------------- -->
+   
+    <script src="main.js"></script>
+</body>
+</html>
